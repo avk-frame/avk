@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #backToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Top Button -->
+  <div id="backToTopBtn">
+    <button onclick="scrollToTop()">↑ Back to Top</button>
+  </div>
+
+  <script>
+    // Show or hide the button based on scroll position
+    window.onscroll = function() { toggleBackToTopBtn() };
+
+    function toggleBackToTopBtn() {
+      var btn = document.getElementById("backToTopBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";  // Show button
+      } else {
+        btn.style.display = "none";   // Hide button
+      }
+    }
+
+    // Scroll the page to the top
+    function scrollToTop() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script>
+
+</body>
+</html>
